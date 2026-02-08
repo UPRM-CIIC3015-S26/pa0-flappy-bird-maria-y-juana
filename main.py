@@ -1,5 +1,6 @@
 import pygame, random
 pygame.init()
+point_sound = pygame.mixer.Sound('point.wav')
 '''
 Welcome to PA0 – Flappy Bird! Throughout this code, you are going to find a recreation of a game you have probably
 heard of before. This is an introductory assignment designed to help you familiarize yourself with what you can expect 
@@ -63,7 +64,7 @@ running = True
 while running:
     # TODO 6: Changing the name!
     # D'oh! This is not yout name isn't follow the detailed instructions on the PDF to complete this task.
-    name = "Homer Simpson"
+    name = "Janlee Santana"
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
@@ -98,6 +99,7 @@ while running:
             # When you pass through the pipes the score should be updated to the current score + 1. Implement the
             # logic to accomplish this scoring system.
             score += 1
+            point_sound.play()
 
         if bird_y > 600 or bird_y < 0:
             game_over = True
