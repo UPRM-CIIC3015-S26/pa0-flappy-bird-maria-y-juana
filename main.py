@@ -69,12 +69,10 @@ while running:
             running = False
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_SPACE:
-                if game_started == False:
+                if  game_started == False:
                     game_started = True
                     bird_velocity = jump
-                elif game_over == False:
-                    bird_velocity = jump
-                else:
+                if game_over != False:
                     # TODO 3: Spawning back the Player
                     # After the bird crashes with a pipe the when spawning back the player it doesn't appear.
                     # It is your job to find why this is happening! (Hint: What variable stores the y coordinates
@@ -86,6 +84,8 @@ while running:
                     game_started = True
                     bird_y = 300
                     pipe_height = random.randint(100, 400)
+                else:
+                    bird_velocity = jump
 
     if game_started == True and game_over == False:
         bird_velocity = bird_velocity + gravity
