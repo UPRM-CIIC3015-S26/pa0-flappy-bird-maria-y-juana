@@ -1,6 +1,5 @@
 import pygame, random
 pygame.init()
-point_sound = pygame.mixer.Sound('point.wav')
 '''
 Welcome to PA0 – Flappy Bird! Throughout this code, you are going to find a recreation of a game you have probably
 heard of before. This is an introductory assignment designed to help you familiarize yourself with what you can expect 
@@ -39,20 +38,20 @@ bird_y = 300
 bird_velocity = 0
 # TODO 1: Tweaking the physics
 # Looks like the player is falling too quickly not giving a change to flap it's wing, maybe tweak around with the value of this variable
-gravity = 2
-jump = -15
+gravity = 9.81
+jump = -10
 # Pipe Variables -->
 pipe_x = 400
 pipe_width = 70
 # TODO 2.1: A Little gap Problem
 # You probably noticed when running the code that it's impossible the player to go through the gaps
 # play around with the pipe_gap variable so that its big enough for the player to pass through
-pipe_gap = 200
+pipe_gap = 20
 pipe_height = random.randint(100, 400)
 # TODO 2.2: The too fast problem
 # The pipes are moving way too fast! Play around with the pipe_speed variable until you find a good
 # speed for the player to play in!
-pipe_speed = 5
+pipe_speed = 20
 
 score = 0
 game_over = False
@@ -64,7 +63,7 @@ running = True
 while running:
     # TODO 6: Changing the name!
     # D'oh! This is not yout name isn't follow the detailed instructions on the PDF to complete this task.
-    name = "Janlee Santana"
+    name = "Homer Simpson"
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
@@ -98,8 +97,7 @@ while running:
             # TODO 4: Fixing the scoring
             # When you pass through the pipes the score should be updated to the current score + 1. Implement the
             # logic to accomplish this scoring system.
-            score += 1
-            point_sound.play()
+            score = 1
 
         if bird_y > 600 or bird_y < 0:
             game_over = True
