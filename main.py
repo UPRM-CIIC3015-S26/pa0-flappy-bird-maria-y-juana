@@ -26,8 +26,6 @@ small_font = pygame.font.SysFont(None, 30)
 # Text Coordinates -->
 title_x = 50
 title_y = 150
-
-instruction_x = 80
 instruction_y = 550
 
 score_x = 200
@@ -36,7 +34,9 @@ score_y = 10
 # Player Variables -->
 bird_x = 50
 bird_y = 300
-bird_velocity = 9
+bird_velocity = 7
+
+instruction_x = 80
 # TODO 1: Tweaking the physics
 # Looks like the player is falling too quickly not giving a change to flap it's wing, maybe tweak around with the value of this variable
 gravity = 1
