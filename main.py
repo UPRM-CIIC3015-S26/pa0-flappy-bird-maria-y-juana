@@ -39,7 +39,7 @@ bird_velocity = 0
 # TODO 1: Tweaking the physics
 # Looks like the player is falling too quickly not giving a change to flap it's wing, maybe tweak around with the value of this variable
 gravity = 1
-jump = -7
+jump = -10
 # Pipe Variables -->
 pipe_x = 400
 pipe_width = 70
@@ -51,7 +51,7 @@ pipe_height = random.randint(150, 450)
 # TODO 2.2: The too fast problem
 # The pipes are moving way too fast! Play around with the pipe_speed variable until you find a good
 # speed for the player to play in!
-pipe_speed = 4
+pipe_speed = 3
 
 score = 0
 game_over = False
@@ -98,7 +98,7 @@ while running:
             # TODO 4: Fixing the scoring
             # When you pass through the pipes the score should be updated to the current score + 1. Implement the
             # logic to accomplish this scoring system.
-            score = 1
+            score += 1
 
         if bird_y > 600 or bird_y < 0:
             game_over = True
